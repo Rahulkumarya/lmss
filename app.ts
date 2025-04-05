@@ -7,10 +7,10 @@ import cookieParser from 'cookie-parser';
 import { Request,Response,NextFunction } from 'express';
 import {ErrorMiddleware} from './middleware/error';
 import userRouter from './routes/user.route';
-import courseRouter from './routes/course.route';
+import doctorRouter from './routes/doctor.route'
 import orderRouter from './routes/order.route';
 import notificationRoute from './routes/notification.route';
-import analyticsRouter from './routes/analytics.route';
+
 import layoutRouter from './routes/layout.route';
 //body parser
 app.use(express.json({limit:"500mb"}));
@@ -36,10 +36,10 @@ app.use(cors({
 //routes
 
 app.use("/api/vs",userRouter);
-app.use("/api/vs",courseRouter);
+app.use("/api/vs",doctorRouter);
+
 app.use("/api/vs",orderRouter);
 app.use("/api/vs",notificationRoute);
-app.use("/api/vs",analyticsRouter);
 app.use("/api/vs/",layoutRouter);
 
 //testing route
